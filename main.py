@@ -1,3 +1,4 @@
+import random
 from distutils.command.clean import clean
 
 from Tools.demo.sortvisu import Array

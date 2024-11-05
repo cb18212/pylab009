@@ -1,5 +1,5 @@
 from distutils.command.clean import clean
-
+import random
 from Tools.demo.sortvisu import Array
 
 HOW_MANY_BOOK = 3
@@ -51,10 +51,24 @@ def read_book(file_path):
 		print(book)
 		return codebook
 
-def
+def reverse_book(c_book):
+	output = {}
+	print(c_book.keys())
+	for letter in c_book.keys():
+		for coord in c_book[letter]:
+			output[coord] = letter
+	return output
+
+def encrypt_letter(letter, c_book):
+	index = random.randint( 0, len(c_book[letter])-1 )
+	return c_book[letter][index]
+
+def decrypt_lettter(letterm, c_rev_book):
+	pass
 
 def main():
 	book = 'books/poem.txt'
 	codebook = read_book(book)
+	print(reverse_book(codebook))
 
 main()
